@@ -1,3 +1,7 @@
+from threading import *
+import time
+from xmpp import *
+
 class JabberThread(Thread):
     """Class for Jabber connection thread"""
 

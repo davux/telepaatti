@@ -1,3 +1,12 @@
+import app
+from conf import config
+import exceptions
+from jabberthread import JabberThread
+from threading import *
+import time, datetime
+from xmpp import *
+
+
 class ClientThread(Thread):
     """ ClientThread class for handling IRC and Jabber connections."""
     def __init__(self,socket, port, JabberID, passwd, debug=False):
@@ -832,7 +841,7 @@ class ClientThread(Thread):
                  ":localhost 002 %s :Your host is localhost [localhost port %s] running version telepaatti-%s" % (
                 nick,
                 self.port,
-                TELEPAATTIVERSION)
+                app.version)
                  ]
 
         while self.connected and jt.connected:

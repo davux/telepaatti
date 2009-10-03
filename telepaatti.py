@@ -23,15 +23,12 @@ For more information about Telepaatti see http://23.fi/telepaatti
 
 """
 
+from clientthread import ClientThread
+from jabberthread import JabberThread
 import socket
-import time, datetime
-import exceptions
-from threading import *
-from xmpp import *
 import getopt, sys
 
 STATUSSTATES = ['AVAILABLE','CHAT', 'AWAY', 'XA', 'DND', 'INVISIBLE']
-TELEPAATTIVERSION = 1
 
 def usage():
     """Usage function for showing commandline options """
